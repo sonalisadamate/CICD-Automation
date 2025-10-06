@@ -1,17 +1,8 @@
 <suite name="GridSuite" parallel="tests" thread-count="3">
     <test name="Test1">
         <classes>
-            <class name="com.AutomationCICD.Project1.TestClassForSeleniumGrid"/>
+            <class name="com.AutomationCICD.Project1.TestClass"/>
         </classes>
     </test>
-    <test name="Test2">
-        <classes>
-            <class name="com.AutomationCICD.Project1.TestClassForSeleniumGrid"/>
-        </classes>
-    </test>
-    <test name="Test3">
-        <classes>
-            <class name="com.AutomationCICD.Project1.TestClassForSeleniumGrid"/>
-        </classes>
-    </test>
+ 
 </suite>
