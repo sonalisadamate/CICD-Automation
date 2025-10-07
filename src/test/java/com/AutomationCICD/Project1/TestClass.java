@@ -10,23 +10,28 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class TestClass {
 
     public WebDriver driver;
 
     @BeforeMethod
     public void launchDriver() {
+        WebDriverManager.chromedriver().setup(); // ✅ auto-downloads and sets path
+
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless=new"); // new headless mode for recent Chrome
+        options.addArguments("--headless=new");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--disable-gpu");
-        options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--window-size=1920,1080");
 
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().setSize(new Dimension(1920, 1080));
     }
+    
     @Test
     public void Test1() {
         driver.navigate().to("https://www.automationtalks.com");
