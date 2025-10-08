@@ -23,10 +23,7 @@ public class TestClass {
 
         ChromeOptions options = new ChromeOptions();
 
-        // Use your installed Chrome binary explicitly
-        options.setBinary("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
-
-        // Jenkins headless and safe options
+        // Headless mode for Jenkins
         options.addArguments("--headless=new");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
@@ -35,12 +32,17 @@ public class TestClass {
         options.addArguments("--remote-allow-origins=*");
         options.addArguments("--window-size=1920,1080");
 
-        // Use a clean user-data dir for Jenkins
+        // Use temporary directories for Jenkins
         options.addArguments("--user-data-dir=C:/Temp/ChromeData");
         options.addArguments("--disk-cache-dir=C:/Temp/ChromeCache");
 
-        // Initialize driver
+        // Explicitly set Chrome binary location
+        options.setBinary("C:/Program Files/Google/Chrome/Application/chrome.exe");
+
+        // Initialize WebDriver
         driver = new ChromeDriver(options);
+
+        // Implicit wait and window size
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().setSize(new Dimension(1920, 1080));
     }
