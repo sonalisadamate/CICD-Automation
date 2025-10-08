@@ -18,9 +18,15 @@ public class TestClass {
 
     @BeforeMethod
     public void launchDriver() {
+        // Setup ChromeDriver
         WebDriverManager.chromedriver().setup();
 
         ChromeOptions options = new ChromeOptions();
+
+        // Use your installed Chrome binary explicitly
+        options.setBinary("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
+
+        // Jenkins headless and safe options
         options.addArguments("--headless=new");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
@@ -29,17 +35,16 @@ public class TestClass {
         options.addArguments("--remote-allow-origins=*");
         options.addArguments("--window-size=1920,1080");
 
-        // Jenkins fix: use a clean user-data dir
+        // Use a clean user-data dir for Jenkins
         options.addArguments("--user-data-dir=C:/Temp/ChromeData");
         options.addArguments("--disk-cache-dir=C:/Temp/ChromeCache");
 
+        // Initialize driver
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().setSize(new Dimension(1920, 1080));
     }
 
-    
-    
     @Test
     public void Test1() {
         driver.navigate().to("https://www.automationtalks.com");
