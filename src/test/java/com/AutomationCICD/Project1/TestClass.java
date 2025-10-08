@@ -18,19 +18,27 @@ public class TestClass {
 
     @BeforeMethod
     public void launchDriver() {
-        WebDriverManager.chromedriver().setup(); // ✅ auto-downloads and sets path
+        WebDriverManager.chromedriver().setup();
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless=new");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--disable-gpu");
+        options.addArguments("--disable-extensions");
+        options.addArguments("--remote-allow-origins=*");
         options.addArguments("--window-size=1920,1080");
+
+        // Jenkins fix: use a clean user-data dir
+        options.addArguments("--user-data-dir=C:/Temp/ChromeData");
+        options.addArguments("--disk-cache-dir=C:/Temp/ChromeCache");
 
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().setSize(new Dimension(1920, 1080));
     }
+
+    
     
     @Test
     public void Test1() {
