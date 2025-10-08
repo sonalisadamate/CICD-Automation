@@ -1,5 +1,6 @@
 package com.AutomationCICD.Project1;
 
+import java.io.File;
 import java.time.Duration;
 
 import org.openqa.selenium.Dimension;
@@ -18,33 +19,42 @@ public class TestClass {
 
     @BeforeMethod
     public void launchDriver() {
-        // Setup ChromeDriver
-        WebDriverManager.chromedriver().setup();
+        try {
+            // Setup ChromeDriver using WebDriverManager
+            WebDriverManager.chromedriver().setup();
 
-        ChromeOptions options = new ChromeOptions();
+            ChromeOptions options = new ChromeOptions();
 
-        // Headless mode for Jenkins
-        options.addArguments("--headless=new");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--disable-gpu");
-        options.addArguments("--disable-extensions");
-        options.addArguments("--remote-allow-origins=*");
-        options.addArguments("--window-size=1920,1080");
+            // Explicit Chrome binary location
+            options.setBinary("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
 
-        // Use temporary directories for Jenkins
-        options.addArguments("--user-data-dir=C:/Temp/ChromeData");
-        options.addArguments("--disk-cache-dir=C:/Temp/ChromeCache");
+            // Headless + safe Jenkins options
+            options.addArguments("--headless=new");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--disable-gpu");
+            options.addArguments("--disable-extensions");
+            options.addArguments("--remote-allow-origins=*");
+            options.addArguments("--window-size=1920,1080");
 
-        // Explicitly set Chrome binary location
-        options.setBinary("C:/Program Files/Google/Chrome/Application/chrome.exe");
+            // Jenkins-friendly temp directories
+            String tempDir = "C:/Temp/JenkinsChrome";
+            File tempFolder = new File(tempDir);
+            if (!tempFolder.exists()) {
+                tempFolder.mkdirs();
+            }
+            options.addArguments("--user-data-dir=" + tempDir + "/ChromeData");
+            options.addArguments("--disk-cache-dir=" + tempDir + "/ChromeCache");
 
-        // Initialize WebDriver
-        driver = new ChromeDriver(options);
+            // Initialize ChromeDriver
+            driver = new ChromeDriver(options);
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+            driver.manage().window().setSize(new Dimension(1920, 1080));
 
-        // Implicit wait and window size
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().window().setSize(new Dimension(1920, 1080));
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Failed to launch ChromeDriver on Jenkins!");
+        }
     }
 
     @Test
