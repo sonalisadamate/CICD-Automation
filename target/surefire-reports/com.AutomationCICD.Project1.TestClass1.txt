@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.AutomationCICD.Project1.TestClass1
--------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.26 s -- in com.AutomationCICD.Project1.TestClass1

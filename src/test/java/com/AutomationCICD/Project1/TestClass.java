@@ -1,60 +1,49 @@
 package com.AutomationCICD.Project1;
 
+import java.io.File;
 import java.time.Duration;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestClass {
 
-    public WebDriver driver;
+    public static WebDriver driver;
 
     @BeforeMethod
-    public void setup() {
-        // Setup ChromeDriver using WebDriverManager
-        WebDriverManager.chromedriver().setup();
-
-        // Create ChromeOptions
-        ChromeOptions options = new ChromeOptions();
-
-        // Run in headless mode
-        options.addArguments("--headless=new"); // "new" headless mode for Chrome 109+
-
-        // Disable GPU, extensions, notifications
-        options.addArguments("--disable-gpu");
-        options.addArguments("--disable-extensions");
-        options.addArguments("--disable-notifications");
-
-        // Use dedicated temp folder for Jenkins (SYSTEM-friendly)
-        options.addArguments("--user-data-dir=C:/Temp/JenkinsChrome");
-        options.addArguments("--disk-cache-dir=C:/Temp/JenkinsChrome/Cache");
-
-        // Optional: Prevent sandbox issues for SYSTEM account
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
-
-        // Initialize driver
-        driver = new ChromeDriver(options);
-
-        // Maximize or set window size (optional)
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    public void launchDriver() {
+    	driver= new ChromeDriver();
+    	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().window().setSize(new Dimension(1920, 1080));
     }
 
     @Test
-    public void openGoogle() {
-        driver.get("https://www.google.com");
-        System.out.println("Page title: " + driver.getTitle());
+    public void Test1() {
+        driver.navigate().to("https://www.automationtalks.com");
+        System.out.println("Test 1 title is " + driver.getTitle());
+    }
+
+    @Test
+    public void Test2() {
+        driver.navigate().to("https://www.automationtalks.com");
+        System.out.println("Test 2 title is " + driver.getTitle());
+    }
+
+    @Test
+    public void Test3() {
+        driver.navigate().to("https://www.automationtalks.com");
+        System.out.println("Test 3 title is " + driver.getTitle());
     }
 
     @AfterMethod
-    public void teardown() {
+    public void tearDown() {
         if (driver != null) {
             driver.quit();
         }
