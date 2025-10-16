@@ -1,52 +1,39 @@
 package com.AutomationCICD.Project1;
 
 import java.time.Duration;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestClass {
 
-    private static WebDriver driver;
+    WebDriver driver;
 
     @BeforeMethod
     public void launchDriver() {
         try {
-            // ✅ Setup ChromeDriver automatically
             WebDriverManager.chromedriver().setup();
 
-            // ✅ Chrome options (tuned for Jenkins and local)
             ChromeOptions options = new ChromeOptions();
-            options.addArguments("--headless=new"); // More stable than --headless
-            options.addArguments("--disable-gpu");
-            options.addArguments("--window-size=1920,1080");
+            options.addArguments("--headless=new"); // new headless mode (more stable)
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--disable-gpu");
+            options.addArguments("--window-size=1920,1080");
             options.addArguments("--remote-allow-origins=*");
-            options.addArguments("--start-maximized");
 
-            // ✅ Explicit ChromeDriverService for CI
-            ChromeDriverService service = new ChromeDriverService.Builder()
-                    .usingAnyFreePort()
-                    .withSilent(true)
-                    .build();
-
-            service.start();
-            driver = new ChromeDriver(service, options);
+            driver = new ChromeDriver(options);
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-            System.out.println("✅ Chrome launched successfully.");
+            System.out.println("✅ Chrome launched successfully in Jenkins.");
 
         } catch (Exception e) {
             e.printStackTrace();
-            throw new RuntimeException("❌ Failed to start ChromeDriver: " + e.getMessage());
+            throw new RuntimeException("❌ Failed to start ChromeDriver in Jenkins: " + e.getMessage());
         }
     }
 
