@@ -14,38 +14,39 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestClass {
 
-    public static WebDriver driver;
+    private static WebDriver driver;
 
     @BeforeMethod
     public void launchDriver() {
-        // Setup ChromeDriver automatically
-        WebDriverManager.chromedriver().setup();
-
-        // Configure ChromeOptions for CI/Jenkins
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless"); // Run in headless mode
-        options.addArguments("--disable-gpu");
-        options.addArguments("--window-size=1920,1080");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--remote-allow-origins=*"); // <== important for CI Chrome versions
-
         try {
-            // Explicitly start ChromeDriverService to avoid port binding issues
+            // ✅ Setup ChromeDriver automatically
+            WebDriverManager.chromedriver().setup();
+
+            // ✅ Chrome options (tuned for Jenkins and local)
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--headless=new"); // More stable than --headless
+            options.addArguments("--disable-gpu");
+            options.addArguments("--window-size=1920,1080");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--remote-allow-origins=*");
+            options.addArguments("--start-maximized");
+
+            // ✅ Explicit ChromeDriverService for CI
             ChromeDriverService service = new ChromeDriverService.Builder()
                     .usingAnyFreePort()
+                    .withSilent(true)
                     .build();
+
             service.start();
-
-            // Launch driver with options
             driver = new ChromeDriver(service, options);
-
-            // Implicit wait
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+            System.out.println("✅ Chrome launched successfully.");
 
         } catch (Exception e) {
             e.printStackTrace();
-            throw new RuntimeException("Failed to start ChromeDriver: " + e.getMessage());
+            throw new RuntimeException("❌ Failed to start ChromeDriver: " + e.getMessage());
         }
     }
 
@@ -71,6 +72,7 @@ public class TestClass {
     public void tearDown() {
         if (driver != null) {
             driver.quit();
+            System.out.println("✅ Browser closed successfully.");
         }
     }
 }
