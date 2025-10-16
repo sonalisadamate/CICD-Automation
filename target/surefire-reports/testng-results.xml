@@ -2,44 +2,44 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-10-15T16:53:22 IST" name="Surefire suite" finished-at="2025-10-15T16:54:44 IST" duration-ms="81765">
+  <suite started-at="2025-10-16T14:36:25 IST" name="Surefire suite" finished-at="2025-10-16T14:37:29 IST" duration-ms="63717">
     <groups>
     </groups>
-    <test started-at="2025-10-15T16:53:22 IST" name="Surefire test" finished-at="2025-10-15T16:54:44 IST" duration-ms="81765">
+    <test started-at="2025-10-16T14:36:25 IST" name="Surefire test" finished-at="2025-10-16T14:37:29 IST" duration-ms="63717">
       <class name="com.AutomationCICD.Project1.TestClass">
-        <test-method is-config="true" signature="launchDriver()[pri:0, instance:com.AutomationCICD.Project1.TestClass@443118b0]" started-at="2025-10-15T16:53:22 IST" name="launchDriver" finished-at="2025-10-15T16:53:24 IST" duration-ms="2405" status="PASS">
+        <test-method is-config="true" signature="launchDriver()[pri:0, instance:com.AutomationCICD.Project1.TestClass@411f53a0]" started-at="2025-10-16T14:36:25 IST" name="launchDriver" finished-at="2025-10-16T14:36:28 IST" duration-ms="2978" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchDriver -->
-        <test-method signature="Test1()[pri:0, instance:com.AutomationCICD.Project1.TestClass@443118b0]" started-at="2025-10-15T16:53:24 IST" name="Test1" finished-at="2025-10-15T16:53:48 IST" duration-ms="23286" status="PASS">
+        <test-method signature="Test1()[pri:0, instance:com.AutomationCICD.Project1.TestClass@411f53a0]" started-at="2025-10-16T14:36:28 IST" name="Test1" finished-at="2025-10-16T14:36:55 IST" duration-ms="26961" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test1 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.AutomationCICD.Project1.TestClass@443118b0]" started-at="2025-10-15T16:53:48 IST" name="tearDown" finished-at="2025-10-15T16:53:48 IST" duration-ms="304" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.AutomationCICD.Project1.TestClass@411f53a0]" started-at="2025-10-16T14:36:55 IST" name="tearDown" finished-at="2025-10-16T14:36:55 IST" duration-ms="268" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchDriver()[pri:0, instance:com.AutomationCICD.Project1.TestClass@443118b0]" started-at="2025-10-15T16:53:48 IST" name="launchDriver" finished-at="2025-10-15T16:53:49 IST" duration-ms="1514" status="PASS">
+        <test-method is-config="true" signature="launchDriver()[pri:0, instance:com.AutomationCICD.Project1.TestClass@411f53a0]" started-at="2025-10-16T14:36:55 IST" name="launchDriver" finished-at="2025-10-16T14:36:56 IST" duration-ms="1126" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchDriver -->
-        <test-method signature="Test2()[pri:0, instance:com.AutomationCICD.Project1.TestClass@443118b0]" started-at="2025-10-15T16:53:49 IST" name="Test2" finished-at="2025-10-15T16:54:14 IST" duration-ms="25016" status="PASS">
+        <test-method signature="Test2()[pri:0, instance:com.AutomationCICD.Project1.TestClass@411f53a0]" started-at="2025-10-16T14:36:56 IST" name="Test2" finished-at="2025-10-16T14:37:00 IST" duration-ms="3615" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test2 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.AutomationCICD.Project1.TestClass@443118b0]" started-at="2025-10-15T16:54:14 IST" name="tearDown" finished-at="2025-10-15T16:54:15 IST" duration-ms="280" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.AutomationCICD.Project1.TestClass@411f53a0]" started-at="2025-10-16T14:37:00 IST" name="tearDown" finished-at="2025-10-16T14:37:00 IST" duration-ms="179" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchDriver()[pri:0, instance:com.AutomationCICD.Project1.TestClass@443118b0]" started-at="2025-10-15T16:54:15 IST" name="launchDriver" finished-at="2025-10-15T16:54:16 IST" duration-ms="1518" status="PASS">
+        <test-method is-config="true" signature="launchDriver()[pri:0, instance:com.AutomationCICD.Project1.TestClass@411f53a0]" started-at="2025-10-16T14:37:00 IST" name="launchDriver" finished-at="2025-10-16T14:37:01 IST" duration-ms="926" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchDriver -->
-        <test-method signature="Test3()[pri:0, instance:com.AutomationCICD.Project1.TestClass@443118b0]" started-at="2025-10-15T16:54:16 IST" name="Test3" finished-at="2025-10-15T16:54:43 IST" duration-ms="27081" status="PASS">
+        <test-method signature="Test3()[pri:0, instance:com.AutomationCICD.Project1.TestClass@411f53a0]" started-at="2025-10-16T14:37:01 IST" name="Test3" finished-at="2025-10-16T14:37:28 IST" duration-ms="26968" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test3 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.AutomationCICD.Project1.TestClass@443118b0]" started-at="2025-10-15T16:54:43 IST" name="tearDown" finished-at="2025-10-15T16:54:44 IST" duration-ms="319" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.AutomationCICD.Project1.TestClass@411f53a0]" started-at="2025-10-16T14:37:28 IST" name="tearDown" finished-at="2025-10-16T14:37:29 IST" duration-ms="654" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

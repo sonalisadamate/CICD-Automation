@@ -166,12 +166,12 @@
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite thread-count=&quot;3&quot; parallel=&quot;tests&quot; name=&quot;GridSuite&quot;&gt;
-  &lt;test thread-count=&quot;3&quot; parallel=&quot;tests&quot; name=&quot;Test1&quot;&gt;
+&lt;suite name=&quot;GridSuite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;AutomationTests&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.AutomationCICD.Project1.TestClass&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Test1 --&gt;
+  &lt;/test&gt; &lt;!-- AutomationTests --&gt;
 &lt;/suite&gt; &lt;!-- GridSuite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -183,7 +183,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test1 (1 class)</span>
+                <span class="test-name">AutomationTests (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -213,15 +213,15 @@ data.addRows(3);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'Test1')
 data.setCell(0, 2, 'com.AutomationCICD.Project1.TestClass')
-data.setCell(0, 3, 30271);
+data.setCell(0, 3, 34683);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'Test2')
 data.setCell(1, 2, 'com.AutomationCICD.Project1.TestClass')
-data.setCell(1, 3, 27594);
+data.setCell(1, 3, 22489);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'Test3')
 data.setCell(2, 2, 'com.AutomationCICD.Project1.TestClass')
-data.setCell(2, 3, 5373);
+data.setCell(2, 3, 22232);
 window.suiteTableData['GridSuite']= { tableData: data, tableDiv: 'times-div-GridSuite'}
 return data;
 }
@@ -259,35 +259,35 @@ return data;
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">Test1</span>
-                <span class="method-start">12177 ms</span>
+                <span class="method-start">3132 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">42454 ms</span>
+                <span class="method-start">37821 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">launchDriver</span>
-                <span class="method-start">42792 ms</span>
+                <span class="method-start">38924 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">Test2</span>
-                <span class="method-start">44435 ms</span>
+                <span class="method-start">42095 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">72031 ms</span>
+                <span class="method-start">64584 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">launchDriver</span>
-                <span class="method-start">72306 ms</span>
+                <span class="method-start">65667 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">Test3</span>
-                <span class="method-start">73860 ms</span>
+                <span class="method-start">66627 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">79235 ms</span>
+                <span class="method-start">88859 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
