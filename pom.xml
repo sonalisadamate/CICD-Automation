@@ -9,7 +9,6 @@
   <artifactId>Project1</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>Project1</name>
-  <url>http://www.example.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -17,15 +16,19 @@
   </properties>
 
   <dependencies>
-    <!-- Selenium updated to latest version to support Chrome 141 -->
-   <dependency>
-        <groupId>org.seleniumhq.selenium</groupId>
-        <artifactId>selenium-java</artifactId>
-        <version>4.16.0</version>
+    <!-- Selenium -->
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>4.16.0</version>
     </dependency>
 
-    <!-- Chrome DevTools Protocol for closest supported version -->
-    
+    <!-- Chrome DevTools (for Chrome 141 compatibility) -->
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-devtools-v120</artifactId>
+      <version>4.16.0</version>
+    </dependency>
 
     <!-- TestNG -->
     <dependency>
@@ -41,19 +44,6 @@
       <artifactId>webdrivermanager</artifactId>
       <version>5.9.2</version>
     </dependency>
-
-    <!-- Sonar Maven Plugin -->
-    <dependency>
-      <groupId>org.sonarsource.scanner.maven</groupId>
-      <artifactId>sonar-maven-plugin</artifactId>
-      <version>5.2.0.4988</version>
-    </dependency>
-    <dependency>
-    <groupId>org.seleniumhq.selenium</groupId>
-    <artifactId>selenium-devtools-v120</artifactId>
-    <version>4.16.0</version>
-</dependency>
-
 
     <!-- JIRA Client -->
     <dependency>
@@ -92,50 +82,40 @@
   </dependencies>
 
   <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <artifactId>maven-clean-plugin</artifactId>
-          <version>3.4.0</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-resources-plugin</artifactId>
-          <version>3.3.1</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.13.0</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>3.3.0</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-jar-plugin</artifactId>
-          <version>3.4.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-install-plugin</artifactId>
-          <version>3.1.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-deploy-plugin</artifactId>
-          <version>3.1.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-site-plugin</artifactId>
-          <version>3.12.1</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-project-info-reports-plugin</artifactId>
-          <version>3.6.1</version>
-          <configuration>
-            <suiteXmlFiles>
-              <suiteXmlFile>testng.xml</suiteXmlFile>
-            </suiteXmlFiles>
-          </configuration>
-        </plugin>
-      </plugins>
-    </pluginManagement>
+    <plugins>
+      <plugin>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>3.4.0</version>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.3.1</version>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.13.0</version>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.3.0</version>
+        <configuration>
+          <suiteXmlFiles>
+            <suiteXmlFile>testng.xml</suiteXmlFile>
+          </suiteXmlFiles>
+          <systemPropertyVariables>
+            <file.encoding>UTF-8</file.encoding>
+          </systemPropertyVariables>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.sonarsource.scanner.maven</groupId>
+        <artifactId>sonar-maven-plugin</artifactId>
+        <version>5.2.0.4988</version>
+      </plugin>
+    </plugins>
   </build>
 </project>
