@@ -1,65 +1,59 @@
 package com.AutomationCICD.Project1;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.BeforeMethod;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestClass {
 
-    WebDriver driver;
+    public WebDriver driver;
 
     @BeforeMethod
-    public void launchDriver() {
-        try {
-            WebDriverManager.chromedriver().setup();
+    public void launchDriver() throws MalformedURLException {
+        // Set Chrome options
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless"); // Important for Jenkins (no GUI)
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        
+     // Optional, since your node is Windows
+        options.setPlatformName("WINDOWS");
+        // Connect to Selenium Grid Hub
+        String hubURL = "http://192.168.1.9:4444"; // ✅ Use your current Hub IP (from console log)
+        driver = new RemoteWebDriver(new URL(hubURL), options);
 
-            ChromeOptions options = new ChromeOptions();
-            options.addArguments("--headless=new"); // new headless mode (more stable)
-            options.addArguments("--no-sandbox");
-            options.addArguments("--disable-dev-shm-usage");
-            options.addArguments("--disable-gpu");
-            options.addArguments("--window-size=1920,1080");
-            options.addArguments("--remote-allow-origins=*");
-
-            driver = new ChromeDriver(options);
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
-            System.out.println("✅ Chrome launched successfully in Jenkins.");
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException("❌ Failed to start ChromeDriver in Jenkins: " + e.getMessage());
-        }
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
     @Test
     public void Test1() {
-        driver.navigate().to("https://www.automationtalks.com");
-        System.out.println("Test 1 title is: " + driver.getTitle());
+        driver.get("https://www.automationtalks.com");
+        System.out.println("Test 1 Title: " + driver.getTitle());
     }
 
     @Test
     public void Test2() {
-        driver.navigate().to("https://www.automationtalks.com");
-        System.out.println("Test 2 title is: " + driver.getTitle());
+        driver.get("https://www.automationtalks.com");
+        System.out.println("Test 2 Title: " + driver.getTitle());
     }
 
     @Test
     public void Test3() {
-        driver.navigate().to("https://www.automationtalks.com");
-        System.out.println("Test 3 title is: " + driver.getTitle());
+        driver.get("https://www.automationtalks.com");
+        System.out.println("Test 3 Title: " + driver.getTitle());
     }
 
     @AfterMethod
-    public void tearDown() {
+    public void quit() {
         if (driver != null) {
             driver.quit();
-            System.out.println("✅ Browser closed successfully.");
         }
     }
 }

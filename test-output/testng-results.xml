@@ -2,47 +2,47 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-10-16T15:26:21 IST" name="GridSuite" finished-at="2025-10-16T15:27:21 IST" duration-ms="59698">
+  <suite started-at="2025-11-02T16:42:05 IST" name="GridSuite" finished-at="2025-11-02T16:42:58 IST" duration-ms="53163">
     <groups>
     </groups>
-    <test started-at="2025-10-16T15:26:21 IST" name="AutomationTests" finished-at="2025-10-16T15:27:21 IST" duration-ms="59698">
+    <test started-at="2025-11-02T16:42:05 IST" name="AutomationTests" finished-at="2025-11-02T16:42:58 IST" duration-ms="53163">
       <class name="com.AutomationCICD.Project1.TestClass">
-        <test-method is-config="true" signature="launchDriver()[pri:0, instance:com.AutomationCICD.Project1.TestClass@6b8ca3c8]" started-at="2025-10-16T15:26:21 IST" name="launchDriver" finished-at="2025-10-16T15:26:24 IST" duration-ms="3216" status="PASS">
+        <test-method is-config="true" signature="launchDriver()[pri:0, instance:com.AutomationCICD.Project1.TestClass@3a6bb9bf]" started-at="2025-11-02T16:42:05 IST" name="launchDriver" finished-at="2025-11-02T16:42:08 IST" duration-ms="2621" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchDriver -->
-        <test-method signature="Test1()[pri:0, instance:com.AutomationCICD.Project1.TestClass@6b8ca3c8]" started-at="2025-10-16T15:26:24 IST" name="Test1" finished-at="2025-10-16T15:26:51 IST" duration-ms="26301" status="PASS">
+        <test-method signature="Test1()[pri:0, instance:com.AutomationCICD.Project1.TestClass@3a6bb9bf]" started-at="2025-11-02T16:42:08 IST" name="Test1" finished-at="2025-11-02T16:42:10 IST" duration-ms="2396" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test1 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.AutomationCICD.Project1.TestClass@6b8ca3c8]" started-at="2025-10-16T15:26:51 IST" name="tearDown" finished-at="2025-10-16T15:26:52 IST" duration-ms="1083" status="PASS">
+        <test-method is-config="true" signature="quit()[pri:0, instance:com.AutomationCICD.Project1.TestClass@3a6bb9bf]" started-at="2025-11-02T16:42:10 IST" name="quit" finished-at="2025-11-02T16:42:10 IST" duration-ms="207" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchDriver()[pri:0, instance:com.AutomationCICD.Project1.TestClass@6b8ca3c8]" started-at="2025-10-16T15:26:52 IST" name="launchDriver" finished-at="2025-10-16T15:26:53 IST" duration-ms="1167" status="PASS">
+        </test-method> <!-- quit -->
+        <test-method is-config="true" signature="launchDriver()[pri:0, instance:com.AutomationCICD.Project1.TestClass@3a6bb9bf]" started-at="2025-11-02T16:42:10 IST" name="launchDriver" finished-at="2025-11-02T16:42:11 IST" duration-ms="1001" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchDriver -->
-        <test-method signature="Test2()[pri:0, instance:com.AutomationCICD.Project1.TestClass@6b8ca3c8]" started-at="2025-10-16T15:26:53 IST" name="Test2" finished-at="2025-10-16T15:27:15 IST" duration-ms="22453" status="PASS">
+        <test-method signature="Test2()[pri:0, instance:com.AutomationCICD.Project1.TestClass@3a6bb9bf]" started-at="2025-11-02T16:42:11 IST" name="Test2" finished-at="2025-11-02T16:42:34 IST" duration-ms="22687" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test2 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.AutomationCICD.Project1.TestClass@6b8ca3c8]" started-at="2025-10-16T15:27:15 IST" name="tearDown" finished-at="2025-10-16T15:27:16 IST" duration-ms="633" status="PASS">
+        <test-method is-config="true" signature="quit()[pri:0, instance:com.AutomationCICD.Project1.TestClass@3a6bb9bf]" started-at="2025-11-02T16:42:34 IST" name="quit" finished-at="2025-11-02T16:42:34 IST" duration-ms="230" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchDriver()[pri:0, instance:com.AutomationCICD.Project1.TestClass@6b8ca3c8]" started-at="2025-10-16T15:27:16 IST" name="launchDriver" finished-at="2025-10-16T15:27:17 IST" duration-ms="1401" status="PASS">
+        </test-method> <!-- quit -->
+        <test-method is-config="true" signature="launchDriver()[pri:0, instance:com.AutomationCICD.Project1.TestClass@3a6bb9bf]" started-at="2025-11-02T16:42:34 IST" name="launchDriver" finished-at="2025-11-02T16:42:35 IST" duration-ms="995" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchDriver -->
-        <test-method signature="Test3()[pri:0, instance:com.AutomationCICD.Project1.TestClass@6b8ca3c8]" started-at="2025-10-16T15:27:17 IST" name="Test3" finished-at="2025-10-16T15:27:21 IST" duration-ms="3188" status="PASS">
+        <test-method signature="Test3()[pri:0, instance:com.AutomationCICD.Project1.TestClass@3a6bb9bf]" started-at="2025-11-02T16:42:35 IST" name="Test3" finished-at="2025-11-02T16:42:58 IST" duration-ms="22740" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test3 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.AutomationCICD.Project1.TestClass@6b8ca3c8]" started-at="2025-10-16T15:27:21 IST" name="tearDown" finished-at="2025-10-16T15:27:21 IST" duration-ms="197" status="PASS">
+        <test-method is-config="true" signature="quit()[pri:0, instance:com.AutomationCICD.Project1.TestClass@3a6bb9bf]" started-at="2025-11-02T16:42:58 IST" name="quit" finished-at="2025-11-02T16:42:58 IST" duration-ms="240" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
+        </test-method> <!-- quit -->
       </class> <!-- com.AutomationCICD.Project1.TestClass -->
     </test> <!-- AutomationTests -->
   </suite> <!-- GridSuite -->
